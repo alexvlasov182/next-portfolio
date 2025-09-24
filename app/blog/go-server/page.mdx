@@ -1,0 +1,144 @@
+
+<Cover
+  src="/projects/golang_post.webp"
+  alt="RoyalZSoftware Blog"
+  caption="Building A Web Server In Go A Beginners Guide"
+/>
+
+**Author:** Oleksandr Vlasov  
+**Post here:** [royalzsoftware.de](https://royalzsoftware.de/blog/building-a-web-server-in-go-a-beginners-guide)
+
+
+
+Creating a web server might sound complex, but it's simple with the Go standard library. In this article, we’ll walk through building a minimal web server from scratch. This server will:
+
+1. Respond to requests at the root URL ( / ) by displaying details about the request.
+2. Provide a /count endpoint to track the total number of requests made.
+
+## The Code
+
+Here’s the complete Go program for our web server
+
+```go
+package main
+
+import (
+	"fmt"
+	"log"
+	"net/http"
+	"sync"
+)
+
+var mu sync.Mutex
+var count int
+
+func main() {
+	http.HandleFunc("/", handler)
+	http.HandleFunc("/count", counter)
+	log.Fatal(http.ListenAndServe("localhost:8000", nil))
+}
+
+// handler responds with details of the HTTP request
+func handler(w http.ResponseWriter, r *http.Request) {
+	mu.Lock()
+	count++
+	mu.Unlock()
+
+	// Write details about the request
+	fmt.Fprintf(w, "%s %s %s\n", r.Method, r.URL, r.Proto)
+	for k, v := range r.Header {
+		fmt.Fprintf(w, "Header[%q] = %q\n", k, v)
+	}
+	fmt.Fprintf(w, "Host = %q\n", r.Host)
+	fmt.Fprintf(w, "RemoteAddr = %q\n", r.RemoteAddr)
+
+	// Parse and display form data if any
+	if err := r.ParseForm(); err != nil {
+		log.Print(err)
+	}
+	for k, v := range r.Form {
+		fmt.Fprintf(w, "Form[%q] = %q\n", k, v)
+	}
+}
+
+// counter responds with the total number of requests
+func counter(w http.ResponseWriter, r *http.Request) {
+	mu.Lock()
+	fmt.Fprintf(w, "Count %d\n", count)
+	mu.Unlock()
+}
+```
+
+### How It Works
+
+1. **Handler Functions:**
+
+   - **<mark>Handler</mark>**: This function is tied to the root URL( / ). It processes incoming requests, increments the request count, and returns detailed information about the request.
+   - **<mark>Counter</mark>:** This function is tied to the /count URL. It responds with the total number of requests the server has received.
+
+2. **Concurrency Management:**
+
+   The `sync.Mutex` ensures safe updates to the `count` variable when multiple requests are being processed at the same time.
+
+3. **Starting the Server:**
+
+   The `http.ListenAndServe` function sets up the server to listen on localhost:8000. Every request triggers the appropriate handler function.
+
+### Running the Server
+
+1. Save the code to a file: `main.go`
+2. Start the server with:
+
+   ```bash
+   go run main.go
+   ```
+
+Your server is now live and listening on `http://localhost:8000`.
+
+### Testing the Server
+
+**Example 1: Request to** `/`.
+
+```bash
+curl http://localhost:8000/
+```
+
+**Response:**
+
+```bash
+GET / HTTP/1.1
+Header["User-Agent"] = ["curl/7.79.1"]
+Header["Accept"] = ["*/*"]
+Host = "localhost:8000"
+RemoteAddr = "127.0.0.1:56789"
+```
+
+**Example 2: Request to** `/count`
+
+Request to the `/count` Endpoint:
+
+```bash
+curl http://localhost:8000/count
+```
+
+**Response:**
+
+```bash
+Count 1
+```
+
+Each additional request to the server will increment the count.
+
+### Why Go?
+
+Golang is a popular programming language designed by Google. Go provides many built-in libraries, such as `net/http` we used in this web server, and also offers efficient frameworks `Gin` for faster development. Additionally, Go has a clean simple syntax and is a powerful tool for handling concurrency.
+
+### What’s Next?
+
+Now that you have built a basic web server, here are some ideas to expand it:
+
+- Serve HTML or JSON responses.
+- Add custom error handling.
+- Create APIs for more advanced applications.
+
+With Go, you can quickly move from a simple web server to a robust, production-ready application. Give it a try and see how easy it is to get started!

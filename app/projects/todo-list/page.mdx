@@ -1,0 +1,110 @@
+export const metadata = {
+  title: "ToDo App – React + TypeScript Project",
+  description: "A fully-featured ToDo application built with React and TypeScript, featuring theme switching, optimized rendering, filters, and persistence in localStorage. Deployed on Vercel/Netlify.",
+};
+
+<Cover
+  src="/projects/small-todo.png"
+  alt="Small Todo Website Screenshot"
+  caption=""
+/>
+**Live Site:** [small-todo.vercel.app](https://small-todo.vercel.app)  
+**GitHub Repo:** [small-todo](https://github.com/alexvlasov182/small-todo)
+
+# ToDo App – React + TypeScript Project
+
+This is a **full-featured ToDo application** built with **React** and **TypeScript**, designed to demonstrate clean architecture, state management, performance optimizations, and modern frontend practices.
+
+---
+
+## **Technologies Used**
+
+- **React** – For building the UI components.
+- **TypeScript** – Strong typing for safer and more predictable code.
+- **React Hooks** – `useReducer`, `useCallback`, `useMemo`, `useEffect` for state and performance management.
+- **React Context API** – For global theme management (light/dark mode).
+- **localStorage** – Persist todos and user-selected theme across sessions.
+- **Vite** – Fast development and build tooling.
+- **Tailwind CSS** – Styling with utility-first classes (optional, can be replaced with CSS modules).
+- **React.memo** – Component memoization to prevent unnecessary re-renders.
+- **Custom Hooks** – Example: `useLocalStorage` for syncing state with localStorage.
+- **Deployment** – Hosted on Vercel or Netlify for instant global availability.
+
+---
+
+## **Project Architecture**
+
+```bash
+src/
+components/
+TodoInput.tsx // Input field and add button
+TodoList.tsx // List of todo items
+TodoItem.tsx // Single todo item component
+Filters.tsx // Filter buttons (All, Active, Completed)
+ThemeToggle.tsx // Light/Dark theme switcher
+contexts/
+ThemeContext.tsx // Theme context provider
+reducers/
+todoReducer.ts // Handles ADD, REMOVE, TOGGLE actions
+hooks/
+useLocalStorage.ts // Custom hook for syncing state with localStorage
+types/
+todo.ts // TypeScript types for Todo and Filter
+App.tsx // Main app 
+```
+
+
+- **Components** handle UI only, keeping logic separate.
+- **Reducers** centralize state logic (`useReducer`) for predictability.
+- **Context** provides theme globally, with automatic re-rendering on changes.
+- **Hooks** abstract repeated logic and enable performance optimizations.
+
+---
+
+## **Key Features**
+
+### 1. **State Management with useReducer**
+- Complex state (add, toggle, remove todos) is centralized in a reducer.
+- Predictable and easy to test.
+
+### 2. **Performance Optimization**
+- `useCallback` for event handlers (`onAdd`, `onToggle`, `onRemove`) to avoid unnecessary renders.
+- `useMemo` for filtered todos (`all`, `active`, `completed`) to avoid expensive recalculations.
+- `React.memo` for `TodoItem` and `TodoList`.
+
+### 3. **Theme Switcher**
+- Light/dark mode stored in **ThemeContext**.
+- Persists user selection in `localStorage`.
+- Applied globally via `document.documentElement` class.
+
+### 4. **Persistence with localStorage**
+- Todos and theme are persisted across browser reloads.
+- Lazy initialization for efficient initial state loading.
+
+### 5. **Filters**
+- Filter state lifted to parent component.
+- `useMemo` returns filtered todos to reduce computation and improve performance.
+
+---
+
+## **Deployment**
+
+- **Vercel/Netlify** for hosting.
+- Production build: `npm run build`.
+- Instant deployment with CI/CD.
+- Accessible globally with HTTPS.
+
+---
+
+## **Why This Project?**
+
+- Demonstrates **clean code architecture**.
+- Shows advanced **React hooks usage**.
+- Optimized rendering techniques (`React.memo`, `useMemo`, `useCallback`).
+- Implements **persistent state** with localStorage.
+- Supports **modern UI/UX** with theme switching and filters.
+- Ready for real-world **portfolio presentation**.
+
+---
+
+This ToDo app is not just functional but also a showcase of **best practices in modern React development**, including **performance, maintainability, and deployment**.

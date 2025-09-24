@@ -1,0 +1,60 @@
+import Link from "next/link";
+
+export const metadata = {
+  title: "Movie Movie list app (TMDB API) - React + TypeScript Project",
+  description:
+    "A modern Movie list app (TMDB API) app built with React, TypeScript, React Query, and TMDB API. Features movie search, filtering, watchlist toggle, and detailed movie pages. Deployed on Vercel.",
+};
+
+<Cover
+  src="/projects/movie-list.png"
+  alt="Movie Explorer Website Screenshot"
+  caption="Movie Movie list app (TMDB API)"
+/>
+
+**GitHub Repo:** <Link href="https://github.com/alexvlasov182/movie-list-app" target="_blank" rel="noopener  noreferrer">https://vercel.com/alexvlasov182s-projects/movie-list-app</Link>  
+**Live Site:** <Link href="https://movie-list-app-lake-chi.vercel.app" target="_blank" rel="noopener noreferrer">https://movie-list-app-lake-chi.vercel.app</Link>
+
+# Movie list app (TMDB API) - React + TypeScript Project
+
+This is a **Movie Explorer application** built with **React, TypeScript, and TMDB API**, featuring **popular movies, filters, search, and detailed pages**.  
+It demonstrates **data fetching with React Query**, **API integration**, **clean component architecture**, and **modern frontend practices**.
+
+---
+
+## **Technologies Used**
+
+- **React + TypeScript** - Component-based architecture with type safety.
+- **React Router v6** - Navigation between Home and Movie Details pages.
+- **React Query (TanStack Query)** - Data fetching, caching, and mutation.
+- **Axios** - API client for TMDB requests.
+- **Tailwind CSS + shadcn/ui** - Modern UI components and styling.
+- **Vite** - Fast development and build tooling.
+- **TMDB API** - For real movie data (popular, search, details).
+- **Vercel** - Deployment and hosting.
+
+---
+
+## **Project Architecture**
+
+```bash
+src/
+api/
+tmdb.ts         # Axios instance + API functions (popular, details, search)
+components/
+ui/             # Reusable UI components (Card, Button, etc.)
+features/
+MovieList/
+  MovieList.tsx # Renders popular/search movies
+  MovieCard.tsx # Single movie card with poster + actions
+  MovieDetails.tsx # Detailed movie info page
+hooks/
+usePopularMovies.ts   # Fetch popular movies
+useMovieDetails.ts    # Fetch single movie details
+useSearchMovies.ts    # Search functionality
+useToggleWatch.ts     # Optimistic update for watchlist toggle
+pages/
+Home.tsx       # Homepage with filters + MovieList
+App.tsx        # Routes config
+types/
+movie.ts       # Movie type definitions
