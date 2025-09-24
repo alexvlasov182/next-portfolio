@@ -1,15 +1,16 @@
 export const metadata = {
-  title: "ToDo App – React + TypeScript Project",
-  description: "A fully-featured ToDo application built with React and TypeScript, featuring theme switching, optimized rendering, filters, and persistence in localStorage. Deployed on Vercel/Netlify.",
-};
+  title: 'ToDo App – React + TypeScript Project',
+  description:
+    'A fully-featured ToDo application built with React and TypeScript, featuring theme switching, optimized rendering, filters, and persistence in localStorage. Deployed on Vercel/Netlify.',
+}
 
 <Cover
   src="/projects/small-todo.png"
   alt="Small Todo Website Screenshot"
   caption=""
 />
-**Live Site:** [small-todo.vercel.app](https://small-todo.vercel.app)  
-**GitHub Repo:** [small-todo](https://github.com/alexvlasov182/small-todo)
+**Live Site:** [small-todo.vercel.app](https://small-todo.vercel.app) **GitHub
+Repo:** [small-todo](https://github.com/alexvlasov182/small-todo)
 
 # ToDo App – React + TypeScript Project
 
@@ -50,9 +51,8 @@ hooks/
 useLocalStorage.ts // Custom hook for syncing state with localStorage
 types/
 todo.ts // TypeScript types for Todo and Filter
-App.tsx // Main app 
+App.tsx // Main app
 ```
-
 
 - **Components** handle UI only, keeping logic separate.
 - **Reducers** centralize state logic (`useReducer`) for predictability.
@@ -64,24 +64,29 @@ App.tsx // Main app
 ## **Key Features**
 
 ### 1. **State Management with useReducer**
+
 - Complex state (add, toggle, remove todos) is centralized in a reducer.
 - Predictable and easy to test.
 
 ### 2. **Performance Optimization**
+
 - `useCallback` for event handlers (`onAdd`, `onToggle`, `onRemove`) to avoid unnecessary renders.
 - `useMemo` for filtered todos (`all`, `active`, `completed`) to avoid expensive recalculations.
 - `React.memo` for `TodoItem` and `TodoList`.
 
 ### 3. **Theme Switcher**
+
 - Light/dark mode stored in **ThemeContext**.
 - Persists user selection in `localStorage`.
 - Applied globally via `document.documentElement` class.
 
 ### 4. **Persistence with localStorage**
+
 - Todos and theme are persisted across browser reloads.
 - Lazy initialization for efficient initial state loading.
 
 ### 5. **Filters**
+
 - Filter state lifted to parent component.
 - `useMemo` returns filtered todos to reduce computation and improve performance.
 

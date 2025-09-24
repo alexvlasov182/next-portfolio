@@ -103,7 +103,6 @@ function ProjectMedia({ src, alt }: ProjectMediaProps) {
         duration: 0.3,
       }}
     >
-
       <img
         src={src}
         alt={alt || 'Project media'}
@@ -181,14 +180,15 @@ export default function Personal() {
       >
         <div className="flex-1">
           <p className="text-zinc-600 text-[20px] dark:text-zinc-400">
-            I design and build fast, scalable, and user-friendly applications with {""}
-            <span className="font-semibold">React & React Native</span>, {""}
-            <span className="font-semibold">Next.js</span>, and {""}
-            <span className="font-semibold">TypeScript</span> - backed by expanding skills in {""}
-            <span className="font-semibold">Node.js</span> and {""}
+            I design and build fast, scalable, and user-friendly applications
+            with {''}
+            <span className="font-semibold">React & React Native</span>, {''}
+            <span className="font-semibold">Next.js</span>, and {''}
+            <span className="font-semibold">TypeScript</span> - backed by
+            expanding skills in {''}
+            <span className="font-semibold">Node.js</span> and {''}
             <span className="font-semibold">Go</span>.
           </p>
-
         </div>
       </motion.section>
 
@@ -225,12 +225,13 @@ export default function Personal() {
         </div>
       </motion.section>
 
-
       <motion.section
         variants={VARIANTS_SECTION}
         transition={TRANSITION_SECTION}
       >
-        <h3 className="mb-5 text-lg text-[32px] font-medium">Work Experience</h3>
+        <h3 className="mb-5 text-lg text-[32px] font-medium">
+          Work Experience
+        </h3>
         <div className="flex flex-col space-y-2">
           {WORK_EXPERIENCE.map((job) => (
             <a
@@ -256,17 +257,14 @@ export default function Personal() {
                   <p className="text-zinc-600 dark:text-zinc-400">
                     {job.start} - {job.end}
                   </p>
-
-
                 </div>
                 <p className="text-zinc-500 text-[18px] dark:text-zinc-400">
                   {job.city}, {job.country}
                 </p>
-                <ul className='list-disc pl-7 text-zinc-600 dark:text-zinc-400 mt-2'>
+                <ul className="list-disc pl-7 text-zinc-600 dark:text-zinc-400 mt-2">
                   {job.description.map((task, idx) => (
                     <li key={idx}>{task}</li>
                   ))}
-
                 </ul>
               </div>
             </a>

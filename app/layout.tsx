@@ -14,13 +14,13 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL('https://oleksandr-vlasov.vercel.app/'),
   alternates: {
-    canonical: '/'
+    canonical: '/',
   },
   title: {
     default: 'Oleksandr Vlasov - Personal website template',
-    template: '%s | Oleksandr Vlasov'
+    template: '%s | Oleksandr Vlasov',
   },
-};
+}
 
 const geist = Geist({
   variable: '--font-geist',

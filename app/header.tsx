@@ -16,7 +16,7 @@ const THEMES_OPTIONS = [
     label: 'Dark',
     id: 'dark',
     icon: <MoonIcon className="h-4 w-4" />,
-  }
+  },
 ]
 
 function ThemeSwitch() {
@@ -62,26 +62,19 @@ function ThemeSwitch() {
   )
 }
 
-
 export function Header() {
   return (
     <header className="mb-8 flex items-center justify-between border-b border-zinc-100 px-0 py-4 dark:border-zinc-800">
       <div>
-        <Link href="/" className="flex items-center gap-2 font-medium text-black dark:text-white">
-
-          <span className='text-[18px] font-bold'>Sascha Vlasov</span>
+        <Link
+          href="/"
+          className="flex items-center gap-2 font-medium text-black dark:text-white"
+        >
+          <span className="text-[18px] font-bold">Sascha Vlasov</span>
           {/* Light logo */}
-          <img
-            src="/react.svg"
-            alt="React Logo"
-            className="h-6 w-6"
-          />
-          
-          <img
-            src="/golang.svg"
-            alt="Golang Logo"
-            className="h-6 w-6 "
-          />
+          <img src="/react.svg" alt="React Logo" className="h-6 w-6" />
+
+          <img src="/golang.svg" alt="Golang Logo" className="h-6 w-6 " />
         </Link>
         <TextEffect
           as="p"
@@ -93,7 +86,7 @@ export function Header() {
           React & React Native Engineer
         </TextEffect>
       </div>
-        <div className="text-xs text-zinc-400">
+      <div className="text-xs text-zinc-400">
         <ThemeSwitch />
       </div>
     </header>

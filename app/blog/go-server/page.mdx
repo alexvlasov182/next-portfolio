@@ -1,4 +1,3 @@
-
 <Cover
   src="/projects/golang_post.webp"
   alt="RoyalZSoftware Blog"
@@ -7,8 +6,6 @@
 
 **Author:** Oleksandr Vlasov  
 **Post here:** [royalzsoftware.de](https://royalzsoftware.de/blog/building-a-web-server-in-go-a-beginners-guide)
-
-
 
 Creating a web server might sound complex, but it's simple with the Go standard library. In this article, we’ll walk through building a minimal web server from scratch. This server will:
 
@@ -72,7 +69,6 @@ func counter(w http.ResponseWriter, r *http.Request) {
 ### How It Works
 
 1. **Handler Functions:**
-
    - **<mark>Handler</mark>**: This function is tied to the root URL( / ). It processes incoming requests, increments the request count, and returns detailed information about the request.
    - **<mark>Counter</mark>:** This function is tied to the /count URL. It responds with the total number of requests the server has received.
 

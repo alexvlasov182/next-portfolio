@@ -16,7 +16,6 @@ const THEMES_OPTIONS = [
     id: 'dark',
     icon: <MoonIcon className="h-4 w-4" />,
   },
- 
 ]
 
 function ThemeSwitch() {
@@ -72,8 +71,15 @@ export function Footer() {
 
         {/* Attribution to Nim template */}
         <p className="text-xs text-zinc-400 text-center">
-          Template by <a href="https://github.com/ibelick/nim" target="_blank" className="underline">Nim</a>. 
-          Nim is designed to make personal branding effortless and beautiful.
+          Template by{' '}
+          <a
+            href="https://github.com/ibelick/nim"
+            target="_blank"
+            className="underline"
+          >
+            Nim
+          </a>
+          . Nim is designed to make personal branding effortless and beautiful.
         </p>
 
         <div className="text-xs text-zinc-400">

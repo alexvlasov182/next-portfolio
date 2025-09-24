@@ -1,5 +1,4 @@
 type Project = {
-
   name: string
   description: string
   link: string
@@ -56,31 +55,34 @@ export const PROJECTS: Project[] = [
   },
   {
     name: 'RoyalZSoftware Website',
-    description: 'A modern corporate platform built with Next.js, TypeScript, and Tailwind CSS. The site delivers fast performance, SEO optimization, and a seamless user experience.',
+    description:
+      'A modern corporate platform built with Next.js, TypeScript, and Tailwind CSS. The site delivers fast performance, SEO optimization, and a seamless user experience.',
     link: '/projects/royalzsoftware-website',
     video:
       'https://res.cloudinary.com/read-cv/video/upload/t_v_b/v1/1/profileItems/W2azTw5BVbMXfj7F53G92hMVIn32/XSfIvT7BUWbPRXhrbLed/ee6871c9-8400-49d2-8be9-e32675eabf7e.mp4?_a=DATAdtAAZAA0',
-      poster: '/projects/royalzsoftware.png',
+    poster: '/projects/royalzsoftware.png',
     id: 'project2',
     uid: 'project-2',
   },
   {
     name: 'Isar – iOS App Built with React Native',
-    description: 'The Isar app is a real-world iOS application developed as part of my work in a product team. I contributed to the project as a React Native developer, focusing on performance, clean architecture, and UI consistency',
+    description:
+      'The Isar app is a real-world iOS application developed as part of my work in a product team. I contributed to the project as a React Native developer, focusing on performance, clean architecture, and UI consistency',
     link: '/projects/isar-app',
     video:
       'https://res.cloudinary.com/read-cv/video/upload/t_v_b/v1/1/profileItems/W2azTw5BVbMXfj7F53G92hMVIn32/XSfIvT7BUWbPRXhrbLed/ee6871c9-8400-49d2-8be9-e32675eabf7e.mp4?_a=DATAdtAAZAA0',
-      poster: '/projects/isar-app.png',
+    poster: '/projects/isar-app.png',
     id: 'project3',
     uid: 'project-3',
   },
   {
     name: 'Courses',
-    description: 'A modern course marketplace (similar to Udemy) where users can buy and watch courses. Built with Next.js, TypeScript, and Tailwind CSS on the frontend, and powered by Node.js, PostgreSQL, and Docker on the backend.',
+    description:
+      'A modern course marketplace (similar to Udemy) where users can buy and watch courses. Built with Next.js, TypeScript, and Tailwind CSS on the frontend, and powered by Node.js, PostgreSQL, and Docker on the backend.',
     link: '/projects/courses',
     video:
       'https://res.cloudinary.com/read-cv/video/upload/t_v_b/v1/1/profileItems/W2azTw5BVbMXfj7F53G92hMVIn32/XSfIvT7BUWbPRXhrbLed/ee6871c9-8400-49d2-8be9-e32675eabf7e.mp4?_a=DATAdtAAZAA0',
-      poster: '/projects/courses-page.png',
+    poster: '/projects/courses-page.png',
     id: 'project4',
     uid: 'project-4',
   },
@@ -94,18 +96,18 @@ export const PROJECTS: Project[] = [
     id: 'project5',
     uid: 'project-5',
   },
-  
+
   {
     name: 'Movie List',
-    description: 'A modern course marketplace (similar to Udemy) where users can buy and watch courses. Built with Next.js, TypeScript, and Tailwind CSS on the frontend, and powered by Node.js, PostgreSQL, and Docker on the backend.',
+    description:
+      'Browse and search popular movies with filters for watched/unwatched, and view detailed movie pages. Built with React Query, Tailwind CSS, and deployed on Vercel.',
     link: '/projects/movie-list',
     video:
       'https://res.cloudinary.com/read-cv/video/upload/t_v_b/v1/1/profileItems/W2azTw5BVbMXfj7F53G92hMVIn32/XSfIvT7BUWbPRXhrbLed/ee6871c9-8400-49d2-8be9-e32675eabf7e.mp4?_a=DATAdtAAZAA0',
-      poster: '/projects/movie-list.png',
+    poster: '/projects/movie-list.png',
     id: 'project6',
     uid: 'project-6',
   },
-  
 ]
 
 export const WORK_EXPERIENCE: WorkExperience[] = [
@@ -116,20 +118,20 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
     end: 'Present',
 
     id: 'work1',
-    country: "Germany", 
-    city: "Weilheim, Bavaria",
+    country: 'Germany',
+    city: 'Weilheim, Bavaria',
     description: [
-      "Designed and implemented the company’s landing page, making all architectural decisions (Next.js)",
-      "Built and integrated a blog by importing posts from Hashnode, implementing MDX for better  readability (Next.js)",
-      "Currently developing a course marketplace (similar to Udemy) with Mux, Stripe, PostgreSQL, and Docker (Next.js)",
-      "Preparing an “Newsletter” landing page to promote company courses (Next.js)",
-      "Collaborated with cross-functional teams and took full responsibility for both frontend architecture and production delivery timelines (Next.js)",
+      'Designed and implemented the company’s landing page, making all architectural decisions (Next.js)',
+      'Built and integrated a blog by importing posts from Hashnode, implementing MDX for better  readability (Next.js)',
+      'Currently developing a course marketplace (similar to Udemy) with Mux, Stripe, PostgreSQL, and Docker (Next.js)',
+      'Preparing an “Newsletter” landing page to promote company courses (Next.js)',
+      'Collaborated with cross-functional teams and took full responsibility for both frontend architecture and production delivery timelines (Next.js)',
 
-      "Developed a calendar feature that significantly improved UX for schedule management (React Native)",
-      "Implemented advanced sorting options (by clients, dates, and orders), increasing user efficiency (React Native)",
-      "Enhanced overall UI by refining styles, adding loaders, and ensuring design consistency (React Native)",
-      "Reduced bug reports from the client, improving application stability (React Native)"
-    ]
+      'Developed a calendar feature that significantly improved UX for schedule management (React Native)',
+      'Implemented advanced sorting options (by clients, dates, and orders), increasing user efficiency (React Native)',
+      'Enhanced overall UI by refining styles, adding loaders, and ensuring design consistency (React Native)',
+      'Reduced bug reports from the client, improving application stability (React Native)',
+    ],
   },
   {
     company: 'QPLix ',
@@ -138,8 +140,8 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
     end: 'June 2024',
 
     id: 'work2',
-    country: "Germany",
-    city: "Munich, Bavaria",
+    country: 'Germany',
+    city: 'Munich, Bavaria',
     description: [
       'Designed and executed exploratory tests to validate new features and bug fixes.',
       'Automated UI tests using TypeScript & TestCafe to streamline regression testing.',
@@ -153,8 +155,8 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
     start: 'December 2021',
     end: 'February 2022',
     id: 'work3',
-    country: "Ukraine",
-    city: "Kharkiv",
+    country: 'Ukraine',
+    city: 'Kharkiv',
     description: [
       'Developed and maintained web applications using Laravel.',
       'Implemented and managed database functionality (MySQL), ensuring data reliability and performance.',
@@ -179,7 +181,6 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
   //     'Adhering to web standards and best practices for delivering visually appealing and user-friendly web pages.',
   //   ],
   // },
-  
 ]
 
 export const BLOG_POSTS: BlogPost[] = [
