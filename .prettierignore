@@ -1,3 +1,10 @@
+
 node_modules/
 .next/
 build/
+# Ignore all MDX files
+**/*.mdx
+
+# Or ignore a specific folder
+app/blog/**/*.mdx
+app/projects/**/*.mdx

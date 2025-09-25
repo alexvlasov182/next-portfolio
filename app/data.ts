@@ -186,14 +186,15 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
 export const BLOG_POSTS: BlogPost[] = [
   {
     title: 'React Hooks - createContext, useContext, useMemo',
-    description: 'I built a simple Todo List app in React using TypeScript. I used createContext and useContext to manage state across components, and useMemo to improve performance. Users can add, delete, complete tasks, filter them, and download the list as a CSV file',
+    description:
+      'I built a simple Todo List app in React using TypeScript. I used createContext and useContext to manage state across components, and useMemo to improve performance. Users can add, delete, complete tasks, filter them, and download the list as a CSV file',
     link: '/blog/react-todo-app',
     uid: 'blog-1',
   },
   {
     title: "Building a Web Server in Go: A Beginner's Guide",
     description:
-      "I built a small web server in Go using the standard library. The server responds at / with request details and has a /count endpoint to track requests. I also handled concurrency safely with sync.Mutex. This tutorial shows how to make a working web server from scratch.",
+      'I built a small web server in Go using the standard library. The server responds at / with request details and has a /count endpoint to track requests. I also handled concurrency safely with sync.Mutex. This tutorial shows how to make a working web server from scratch.',
     link: '/blog/go-server',
     uid: 'blog-2',
   },

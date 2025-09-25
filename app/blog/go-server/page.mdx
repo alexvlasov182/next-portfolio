@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Cover from '@/components/cover'
 
 <Cover
   src="/projects/golang_post.webp"
@@ -11,10 +12,10 @@ import Link from 'next/link'
 
 # Building a Web Server in Go
 
-I built a **minimal web server** in **Go** using the standard library. The server responds at `/` with request details and has a `/count` endpoint to track the number of requests.  
+I built a **minimal web server** in **Go** using the standard library. The server responds at `/` with request details and has a `/count` endpoint to track the number of requests.
 
-The difficult part was handling **concurrent requests safely** using `sync.Mutex` and managing request counts correctly.  
+The difficult part was handling **concurrent requests safely** using `sync.Mutex` and managing request counts correctly.
 
-This project helped me understand **Go basics**, **HTTP handlers**, and **concurrency**, giving a practical introduction to building web servers from scratch.  
+This project helped me understand **Go basics**, **HTTP handlers**, and **concurrency**, giving a practical introduction to building web servers from scratch.
 
 For the full project and code, check the post link above.

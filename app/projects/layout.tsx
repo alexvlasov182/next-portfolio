@@ -1,7 +1,6 @@
 'use client'
-import { TextMorph } from '@/components/ui/text-morph'
+
 import { ScrollProgress } from '@/components/ui/scroll-progress'
-import { useEffect, useState } from 'react'
 
 export default function LayoutBlogPost({
   children,
