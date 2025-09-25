@@ -67,7 +67,7 @@ export const PROJECTS: Project[] = [
   {
     name: 'Isar – iOS App Built with React Native',
     description:
-      'The Isar app is a real-world iOS application developed as part of my work in a product team. I contributed to the project as a React Native developer, focusing on performance, clean architecture, and UI consistency',
+      'The Isar app is a real-world iOS application. Built with React Native, focusing on performance, clean architecture, and UI consistency',
     link: '/projects/isar-app',
     video:
       'https://res.cloudinary.com/read-cv/video/upload/t_v_b/v1/1/profileItems/W2azTw5BVbMXfj7F53G92hMVIn32/XSfIvT7BUWbPRXhrbLed/ee6871c9-8400-49d2-8be9-e32675eabf7e.mp4?_a=DATAdtAAZAA0',
@@ -186,14 +186,14 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
 export const BLOG_POSTS: BlogPost[] = [
   {
     title: 'React Hooks - createContext, useContext, useMemo',
-    description: 'How I have build a todo-list app with cerateContext',
+    description: 'I built a simple Todo List app in React using TypeScript. I used createContext and useContext to manage state across components, and useMemo to improve performance. Users can add, delete, complete tasks, filter them, and download the list as a CSV file',
     link: '/blog/react-todo-app',
     uid: 'blog-1',
   },
   {
     title: "Building a Web Server in Go: A Beginner's Guide",
     description:
-      "Creating a web server might sound complex, but it's simple with the Go standard library. In this article, we’ll walk through building a minimal web server from scratch. This server will",
+      "I built a small web server in Go using the standard library. The server responds at / with request details and has a /count endpoint to track requests. I also handled concurrency safely with sync.Mutex. This tutorial shows how to make a working web server from scratch.",
     link: '/blog/go-server',
     uid: 'blog-2',
   },

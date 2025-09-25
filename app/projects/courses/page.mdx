@@ -1,25 +1,26 @@
 import Link from 'next/link'
 
 export const metadata = {
-  title: 'Newsletter Landing Page - RoyalZSoftware Project',
+  title: 'Courses Page - RoyalZSoftware Project',
   description:
-    'A newsletter landing page built for RoyalZSoftware, designed to share software development insights and allow users to subscribe. Developed by Oleksandr Vlasov with Next.js, TypeScript, and Tailwind CSS.',
+    'The RoyalZSoftware Course Marketplace** is a modern e-learning platform (similar to Udemy) where users can **buy and watch courses.',
   alternates: {
-    canonical: '/projects/newsletter',
+    canonical: '/projects/courses',
   },
 }
 
 <Cover
   src="/projects/courses-page.png"
-  alt="Newsletter Landing Page Screenshot"
-  caption="RoyalZSoftware Newsletter"
+  alt="RoyalZSoftware Courses Page"
+  caption="RoyalZSoftware Courses Page"
 />
 
 # RoyalZSoftware Course Marketplace
 
 **Author:** Oleksandr Vlasov  
 **Role:** Fullstack Developer  
-**Tech Stack:** Next.js, TypeScript, Tailwind CSS, Node.js, PostgreSQL, Stripe, Mux, Docker, ESLint, Prettier
+**Tech Stack:** Next.js, TypeScript, Tailwind CSS, Node.js, PostgreSQL, Stripe, Mux, Docker, ESLint, Prettier  
+**Live Site:** <Link href="https://royalzsoftware.de/courses" target="_blank" rel="noopener noreferrer">royalzsoftware.de</Link>
 
 ---
 
@@ -49,10 +50,9 @@ The marketplace supports secure payments, seamless video streaming, and intuitiv
 - Designed a **course marketplace flow** from browsing to checkout and playback.
 - Integrated **Stripe Checkout** for one-time payments.
 - Implemented **Mux video hosting & streaming** for high-performance video delivery.
-- Built **responsive layouts** optimized for mobile and desktop.
 - Applied **clean architecture** principles with modular components and reusable hooks.
 - Used **Dockerized setup** for consistent local and production environments.
 
 ---
 
-> This project demonstrates my ability to build a **fullstack application** that combines modern frontend frameworks, secure backend integrations, and cloud-ready infrastructure.
+> In this project, I built a course marketplace with payments and video streaming. The hard part was setting up Mux for video, connecting it with Next.js and the database, and running everything with Docker. I solved this by careful integration of Mux, PostgreSQL, and containerized services.

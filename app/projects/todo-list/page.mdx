@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 export const metadata = {
   title: 'ToDo App – React + TypeScript Project',
   description:
@@ -9,20 +11,20 @@ export const metadata = {
   alt="Small Todo Website Screenshot"
   caption=""
 />
-**Live Site:** [small-todo.vercel.app](https://small-todo.vercel.app)  
-**GitHubRepo:** [small-todo](https://github.com/alexvlasov182/small-todo)
 
 # Todo List Application
 
 **Author:** Oleksandr Vlasov  
 **Role:** React Developer  
-**Tech Stack:** React, TypeScript, Vite, Tailwind CSS, localStorage, ESLint, Prettier
+**Tech Stack:** React, TypeScript, Vite, Tailwind CSS, localStorage, ESLint, Prettier  
+**Live Site:** <Link href="https://small-todo.vercel.app" target="_blank" rel="noopener noreferrer">small-todo</Link>  
+**GitHubRepo:** <Link href="https://github.com/alexvlasov182/small-todo" target="_blank" rel="noopener noreferrer">small-todo</Link>
 
 ---
 
 ## Project Overview
 
-The **Todo List Application** is a simple yet powerful productivity tool that allows users to **add, edit, filter, and manage daily tasks**.  
+The **Todo List Application** is a simple yet powerful productivity tool that allows users to **add, delete, filter, and manage daily tasks**.  
 The app is designed with a focus on **clean UI**, **state management**, and **performance optimization**, showcasing modern frontend development practices.  
 
 Users can filter tasks (all, completed, active), toggle completion status, and persist their list across sessions using browser storage.  
@@ -49,4 +51,4 @@ Users can filter tasks (all, completed, active), toggle completion status, and p
 
 ---
 
-> This project demonstrates my ability to design and implement a **clean, optimized frontend application** with modern React practices and attention to user experience.
+> In this project, I built a todo app with filters, storage, and a clean UI. The difficult part was using React hooks like useMemo and useReducer for state and performance. I solved this by learning how to manage state better and making the app faster with memoization.

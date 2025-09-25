@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 <Cover
   src="/projects/react.png"
   alt="RoyalZSoftware Blog"
@@ -5,156 +7,14 @@
 />
 
 **Author:** Oleksandr Vlasov  
-**Role:** Frontend Developer  
-**Tech Stack:** React, TypeScript, Tailwind CSS, ESLint, Prettier  
-**Live Site:** [royalzsoftware.de](https://royalzsoftware.de/blog/react-hooks-createcontext-usecontext-usememo)
+**Post here:** <Link href="https://royalzsoftware.de/blog/react-hooks-createcontext-usecontext-usememo" target="_blank" rel="noopener noreferrer">royalzsoftware.de</Link>
 
----
+# Todo Application with React
 
-As a junior React developer, I recently worked on a project to build a **Todo** **Application** using **React** with **TypeScript**. The goal was to build a functional app and dive deeper into React features like **useState**, **useMemo**, and especially **useContext** for state management.
+I built a **Todo App** using **React** and **TypeScript**. The app lets users **add, delete, complete tasks**, filter them, and **download the list as a CSV file**.  
 
-This app allows users to add, delete, mark tasks as complete, and even download the to-do list as a CSV file.
+The difficult part was using **createContext** and **useContext** to manage state across multiple components and **useMemo** to make rendering faster.  
 
-# **1\. Setting Up the Project with Vite**
+This project helped me understand **React hooks** and **state management**, and I gained practical experience creating a modular, maintainable app.  
 
-First, I used Vite to create my project. Vite is a great tool for fast and efficient React development. Here’s how I set it up:
-
-```bash
-npm create vite@latest my-todo-app --template react-ts
-```
-
-This gave me a **TypeScript**\-ready React project right from the start.
-
-# **2\. Managing Todos with** `useState`
-
-The core feature of this app is the **to**\-**do** **list** itself. I used React **useState** to manage the list of todos. Each to-do has two properties: the **task** **description** and whether it’s **completed**.
-
-Here’s what the todo type looks like in TypeScript:
-
-```typescript
-export interface Todo = {
-  text: string;
-  completed: boolean;
-};
-```
-
-To manage the state, I used **useState**:
-
-```typescript
-const [todos, setTodos] = useState<Todo[]>([])
-```
-
-This allows me to add new todos, mark them as completed, or delete them.
-
-# **3\. Avoiding Prop Drilling with useContext**
-
-Passing down props through multiple components can get messy quickly, especially when the app grows. Instead of passing the to-do list and functions through several layers, I used **React** **Context.**
-
-- **createContext**: This sets up a "global store" for the todo state and functions like **addTodo**, **deleteTodo**, and **toggleTodo**.
-- **useContext**: Any component that needs access to this store can **useContext** to easily access the todo state and functions.
-
-This simplified my app and made it much easier to manage the to-do list of different components.
-
-Here’s how I set up the context:
-
-```typescript
-const TodoContext = createContext<TodoContextType | undefined>(undefined)
-```
-
-And in components where I need to use the todo state:
-
-```typescript
-const { todos, addTodo, deleteTodo, toggleTodo } = useContext(TodoContext)
-```
-
-# **4\. Marking Todos as Complete/Incomplete**
-
-To mark tasks as completed, I added a simple checkbox next to each to-do. When clicked, it calls toggleTodo, which changes the completed status of that todo.
-
-```typescript
-function toggleTodo(index: number) {
-  setTodos((prevTodos) =>
-    prevTodos.map((todo, i) =>
-      i === index ? { ...todo, completed: !todo.completed } : todo
-    )
-  )
-}
-```
-
-This function updates the specific todo without mutating the original array.
-
-# **5\. Deleting Todos**
-
-Deleting a todo is also simple. I used the **filter()** method to remove the todo based on its index in the list.
-
-```typescript
-function deleteTodo(index: number) {
-  setTodos((prevTodos) => prevTodos.filter((_, i) => i !== index))
-}
-```
-
-This creates a new array that excludes the deleted todo, and then I update the state with that new array.
-
-# **6\. Downloading the Todo List as CSV**
-
-One cool feature I added was the ability to download the to-do list as a CSV file. Here’s how I did it:
-
-```typescript
-const downloadCSV = () => {
-  const dataCSV =
-    'task,completed\n' +
-    todos
-      .map(
-        (todo) => `${todo.text}, ${todo.completed ? 'done' : 'not completed'}`
-      )
-      .join('\n')
-
-  const blob = new Blob([dataCSV], { type: 'text/csv' })
-  const url = window.URL.createObjectURL(blob)
-
-  const a = document.createElement('a')
-  a.href = url
-  a.download = 'todo-list.csv'
-  a.click()
-
-  window.URL.revokeObjectURL(url)
-}
-```
-
-This code generates a CSV file with the to-do tasks and their completion status, which can be easily downloaded.
-
-# **7\. Optimizing with useMemo**
-
-To avoid unnecessary re-calculations, I used useMemo to optimize the performance when rendering the to-do list. For example, I used it to filter completed and incomplete tasks more efficiently.
-
-```typescript
-const renderTodos = useMemo(() => {
-    return todos.map((todo, index) => (
-      <li key={index} className={styles.todoItem}>
-        <input
-          type="checkbox"
-          className={styles.checkbox}
-          checked={todo.completed}
-          onChange={() => toggleTodo(index)}
-        />
-        <span className={todo.completed ? styles.completed : styles.todoText}>
-          {todo.text}
-        </span>
-        <button
-          className={styles.deleteButton}
-          onClick={() => deleteTodo(index)}
-        >
-          Delete
-        </button>
-      </li>
-    ));
-  }, [todos, toggleTodo, deleteTodo]);
-```
-
-# **Conclusion:**
-
-Building this application gave me a deep understanding of important concepts like **createContext** and **useContext**. I also understood how **useMemo** works and why we need it. In general, I gained a lot of experience doing this application, and I’m sure that it will help me in my future real-world projects.
-
-If you are new to the **React** world I suggested creating a to-do application and using **createContext** and **useContext**, also add to the to-do application **useMemo**, which gives you a deep understanding of how works, **useMemo** **useContext** and **createContext** functionality.
-
-# **Thanks for Reading!**
+For the full project and code, check the post link above.

@@ -132,18 +132,25 @@ function ProjectMedia({ src, alt }: ProjectMediaProps) {
   )
 }
 
-function MagneticSocialLink({
+interface MagneticSocialLinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
+  link: string
+  children: React.ReactNode
+}
+
+export function MagneticSocialLink({
   children,
   link,
-}: {
-  children: React.ReactNode
-  link: string
-}) {
+  target,
+  ...props
+}: MagneticSocialLinkProps) {
   return (
     <Magnetic springOptions={{ bounce: 0 }} intensity={0.3}>
       <a
         href={link}
+        target={target}
+        rel={target === '_blank' ? 'noopener noreferrer' : undefined}
         className="group relative inline-flex shrink-0 items-center gap-[1px] rounded-full bg-zinc-100 px-2.5 py-1 text-sm text-black transition-colors duration-200 hover:bg-zinc-950 hover:text-zinc-50 dark:bg-zinc-800 dark:text-zinc-100 dark:hover:bg-zinc-700"
+        {...props} // allow passing other anchor props
       >
         {children}
         <svg
@@ -321,7 +328,7 @@ export default function Personal() {
         </p>
         <div className="flex items-center justify-start space-x-3">
           {SOCIAL_LINKS.map((link) => (
-            <MagneticSocialLink key={link.label} link={link.link}>
+            <MagneticSocialLink key={link.label} link={link.link} target='_blank' >
               {link.label}
             </MagneticSocialLink>
           ))}
