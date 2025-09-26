@@ -60,6 +60,7 @@ function ProjectMedia({ src, alt }: ProjectMediaProps) {
         className="aspect-video w-full  rounded-xl object-cover"
         width={640}
         height={360}
+        priority
       />
 
       <MorphingDialogContainer>
@@ -68,6 +69,7 @@ function ProjectMedia({ src, alt }: ProjectMediaProps) {
             src={src}
             alt={alt || 'Project media'}
             className="aspect-video h-[50vh] w-full rounded-xl md:h-[70vh] object-cover"
+            priority
           />
         </MorphingDialogContent>
         <MorphingDialogClose
@@ -99,14 +101,9 @@ export default function Personal() {
       >
         <div className="flex-1">
           <p className="text-zinc-600 text-[20px] dark:text-zinc-400">
-            I design and build fast, scalable, and user-friendly applications
-            with {''}
-            <span className="font-semibold">React & React Native</span>, {''}
-            <span className="font-semibold">Next.js</span>, and {''}
-            <span className="font-semibold">TypeScript</span> - backed by
-            expanding skills in {''}
-            <span className="font-semibold">Node.js</span> and {''}
-            <span className="font-semibold">Go</span>.
+            I enjoy building fast and easy-to-use apps with React, React Native,
+            Next.js, and TypeScript. I am also learning Node.js and Go to grow
+            my backend skills.
           </p>
         </div>
       </motion.section>
