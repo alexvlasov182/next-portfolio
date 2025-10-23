@@ -224,7 +224,7 @@ export const SOCIAL_LINKS: SocialLink[] = [
   },
   {
     label: 'CV',
-    link: 'https://drive.google.com/file/d/1nH-rOzebe-c1OsJAqtUTJSfRvV7wXYwQ/view',
+    link: 'https://drive.google.com/file/d/1iypfXHhicAbrIcpshZrW_gTYnvPBt3ud/view?usp=drive_link',
   },
   {
     label: 'RoyalZSoftware',
